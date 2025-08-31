@@ -9,7 +9,7 @@ def parse_number(input_string: str, i: int) -> tuple:
         raise ValueError("Empty input")
 
     n = len(input_string)
-    
+
     start = i
 
     # --- Leading Sign

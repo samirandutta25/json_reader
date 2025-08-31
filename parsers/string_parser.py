@@ -1,19 +1,19 @@
 def parse_string(input_string: str, i: int) -> tuple:
     """
     Parse a JSON-formatted string starting from a given position.
-    The function parses a string that starts 
+    The function parses a string that starts
     with a double quote (") and handles escaped characters.
     Valid escape sequences include: \", \\, \b, \f, \n, \r, \t
     Args:
-        input_string (str): The input string containing 
-        a JSON-formatted string. i (int): Starting 
+        input_string (str): The input string containing
+        a JSON-formatted string. i (int): Starting
         position in the input string where parsing should begin.
     Returns:
         tuple: A tuple containing:
             - str: The parsed string value (without surrounding quotes)
             - int: The index position after the parsed string
     Raises:
-        ValueError: If the input is empty, doesn't start with ", 
+        ValueError: If the input is empty, doesn't start with ",
         contains invalid escape sequences,
                    or isn't properly terminated.
     Example:

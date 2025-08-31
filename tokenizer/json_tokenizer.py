@@ -5,7 +5,7 @@ from parsers.string_parser import parse_string
 def json_tokenizer(json_string: str) -> list[tuple]:
     """
     Tokenize JSON String
-    using tokens like LBRACE RBRACE etc
+    using tokens like LBRACE RBRACE
     """
     n = len(json_string)
     i = 0
@@ -35,7 +35,7 @@ def json_tokenizer(json_string: str) -> list[tuple]:
             i += 1
         elif json_string[i] == "-" or json_string[i] in "0123456789":
             num, rem = parse_number(json_string, i)
-            json_tokenized_res.append(("NUMBER", str(num)))
+            json_tokenized_res.append(("NUMBER", num))
             i = rem
         elif json_string[i] == '"':
             string, rem = parse_string(json_string, i)
@@ -81,3 +81,8 @@ if __name__ == "__main__":
         {"user": {"id": 101, "roles": ["admin", "editor"]}}
     """
     print(json_tokenizer(json_str5))
+
+    json_str6 = """
+        [[1, 2], [3, 4], [5, 6]]
+    """
+    print(json_tokenizer(json_str6))

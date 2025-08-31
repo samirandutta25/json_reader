@@ -1,7 +1,3 @@
-import pytest
-import sys
-import os
-
 from tokenizer.json_tokenizer import json_tokenizer
 
 
@@ -13,7 +9,7 @@ def test_json_tokenizer_simple():
         ("LBRACE", "{"),
         ("STRING", "a"),
         ("COLON", ":"),
-        ("NUMBER", "1"),
+        ("NUMBER", 1),
         ("RBRACE", "}"),
     ]
 
@@ -29,7 +25,7 @@ def test_json_tokenizer_nested():
         ("LBRACE", "{"),
         ("STRING", "id"),
         ("COLON", ":"),
-        ("NUMBER", "101"),
+        ("NUMBER", 101),
         ("COMMA", ","),
         ("STRING", "roles"),
         ("COLON", ":"),
